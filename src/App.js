@@ -5,6 +5,8 @@ import Header from "./Header";
 import ToDoList from './ToDoList.js';
 import ToDoForm from './ToDoForm';
 
+const defaultListTitle = 'React.JS ToDoList';
+
 function App() {
 	var toDoListData = () => {
 		const dataInStorage = JSON.parse(sessionStorage.getItem('toDoListData'));
@@ -43,16 +45,23 @@ function App() {
 
 	var toDoListTitle = () => {
 		const titleInStorage = sessionStorage.getItem('toDoListTitle');
-		return titleInStorage != null ? titleInStorage : 'React.JS ToDoList';
+		return titleInStorage != null ? titleInStorage : defaultListTitle;
 	}
 
-	const [value, setValue] = useState(toDoListTitle);
+	const [title, setTitle] = useState(toDoListTitle);
+
+	const resetList = () => {
+		setToDoList([]);
+		sessionStorage.setItem('toDoListData', JSON.stringify([]));
+		//setTitle(defaultListTitle); TODO: set title not working
+		sessionStorage.setItem('toDoListTitle', defaultListTitle);
+	};
 
 	return (
 		<div className="todo-app">
-			<Header value={value} setValue={setValue} />
+			<Header title={title} setTitle={setTitle} />
 			<ToDoForm addTask={addTask} />
-			<ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter} />
+			<ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter} resetList={resetList} />
 		</div>
 	);
 
@@ -68,7 +77,7 @@ function App() {
 				r = (d2 + r) % 16 | 0;
 				d2 = Math.floor(d2 / 16);
 			}
-			return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+			return (c === 'x' ? r : ((r & 0x3) | (0x8))).toString(16);
 		});
 	}
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-const Header = ({value, setValue}) => {
-	const [editingValue, setEditingValue] = useState(value);
+const Header = ({title, setTitle}) => {
+	const [editingValue, setEditingValue] = useState(title);
 
 	const onChange = (event) => setEditingValue(event.target.value);
 
@@ -13,9 +13,9 @@ const Header = ({value, setValue}) => {
 
 	const onBlur = (event) => {
 		if (event.target.value.trim() === "") {
-			setEditingValue(value);
+			setEditingValue(title);
 		} else {
-			setValue(event.target.value)
+			setTitle(event.target.value)
 			sessionStorage.setItem('toDoListTitle', event.target.value);
 		}
 	}

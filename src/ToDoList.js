@@ -1,7 +1,7 @@
 import React from 'react';
 import ToDo from './ToDo.js';
 
-const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
+const ToDoList = ({ toDoList, handleToggle, handleFilter, resetList }) => {
     return (
         <div className="todo-list">
             <div className="todo-list-container">
@@ -12,7 +12,8 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
                 })}
             </div>
             <div>
-                <button className="clear button" style={{margin: '20px'}} onClick={handleFilter}>Clear Completed</button>
+                <button className="clear button" style={{margin: '20px'}} onClick={handleFilter}>Remove Completed</button>
+                <button className="clear button" style={{margin: '20px'}} onClick={resetList}>Reset</button>
             </div>
         </div>
     );
