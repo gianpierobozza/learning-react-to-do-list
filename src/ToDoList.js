@@ -2,6 +2,7 @@ import React from 'react';
 import ToDo from './ToDo.js';
 
 const ToDoList = ({ toDoList, handleToggle, handleFilter, resetList }) => {
+
     return (
         <div className="todo-list">
             <div className="todo-list-container">

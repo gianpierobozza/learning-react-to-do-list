@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
+
+const defaultListTitle = 'React.JS ToDoList';
 
 const Header = ({title, setTitle}) => {
-	const [editingValue, setEditingValue] = useState(title);
 
-	const onChange = (event) => setEditingValue(event.target.value);
+	const onChange = (event) => setTitle(event.target.value);
 
 	const onKeyDown = (event) => {
 		if (event.key === "Enter" || event.key === "Escape") {
@@ -13,7 +14,7 @@ const Header = ({title, setTitle}) => {
 
 	const onBlur = (event) => {
 		if (event.target.value.trim() === "") {
-			setEditingValue(title);
+			setTitle(defaultListTitle);
 		} else {
 			setTitle(event.target.value)
 			sessionStorage.setItem('toDoListTitle', event.target.value);
@@ -26,7 +27,7 @@ const Header = ({title, setTitle}) => {
 				className="list-title"
 				type="text"
 				aria-label="Field name"
-				value={editingValue}
+				value={title}
 				onChange={onChange}
 				onKeyDown={onKeyDown}
 				onBlur={onBlur}
