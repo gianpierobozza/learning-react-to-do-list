@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# A To Do List app made with React.JS for the purpouse of learning the Framework
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+The production app is deployed on AWS AmplifyApp at [https://master.dmkiin9kvsmy9.amplifyapp.com/](https://master.dmkiin9kvsmy9.amplifyapp.com/)
+
+## Current Features:
+- Add tasks
+- Toggle tasks completion (strikeout)
+- Clear completed tasks
+- Change list title
+- Completely reset page
 
 ## Available Scripts
 
