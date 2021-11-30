@@ -6,13 +6,13 @@ const Header = ({title, setTitle}) => {
 	const onChange = (event) => setTitle(event.target.value);
 
 	const onKeyDown = (event) => {
-		if (event.key === "Enter" || event.key === "Escape") {
+		if (event.key === 'Enter' || event.key === 'Escape') {
 		  	event.target.blur();
 		}
 	}
 
 	const onBlur = (event) => {
-		if (event.target.value.trim() === "") {
+		if (event.target.value.trim() === '') {
 			setTitle(defaultListTitle);
 		} else {
 			setTitle(event.target.value)
@@ -21,17 +21,17 @@ const Header = ({title, setTitle}) => {
 	}
 
 	return (
-		<div className="tooltip">
+		<div className='tooltip'>
 			<input
-				className="list-title"
-				type="text"
-				aria-label="Field name"
+				className='list-title'
+				type='text'
+				aria-label='Field name'
 				value={title}
 				onChange={onChange}
 				onKeyDown={onKeyDown}
 				onBlur={onBlur}
 			/>
-			<span className="tooltip-text">Click to Edit!</span>
+			<span className='tooltip-text'>Click to Edit!</span>
 		</div>
 	);
 };

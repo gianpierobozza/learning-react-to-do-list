@@ -138,6 +138,59 @@ input.submit-text {
   margin: 8px 0;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
   max-width: 120px;
+}
+
+.toggle-area {
+  cursor: pointer;
+  text-align: center;
+}
+
+.share-text {
+  resize: none;
+  background-color: floralwhite;
+  padding: 4px 8px;
+  height: 27px;
+  margin-bottom: -13px;
+  border: none;
+  border-radius: 4px;
+}
+
+.share-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.share-tooltip .share-tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 85%;
+  left: 68%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.share-tooltip .share-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.share-tooltip:hover .share-tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

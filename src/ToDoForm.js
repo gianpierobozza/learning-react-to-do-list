@@ -11,13 +11,13 @@ const ToDoForm = ({addTask}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         addTask(userInput);
-        setUserInput("");
+        setUserInput('');
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <input className="submit-text" value={userInput} type="text" onChange={handleChange} placeholder="Enter task..."/>
-            <button className="submit button">Submit</button>
+            <input className='submit-text' value={userInput} type='text' onChange={handleChange} placeholder='Enter task...'/>
+            <button className='submit button'>Submit</button>
         </form>
     );
 };

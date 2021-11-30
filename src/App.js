@@ -3,9 +3,10 @@ import { generateUUID } from './Helpers.js'
 import { defaultListTitle } from './Globals.js'
 
 //components
-import Header from "./Header";
+import Header from './Header';
 import ToDoList from './ToDoList.js';
 import ToDoForm from './ToDoForm.js';
+import ToDoShare from './ToDoShare.js';
 
 function App() {
 	
@@ -57,10 +58,11 @@ function App() {
 	};
 
 	return (
-		<div className="todo-app">
+		<div className='todo-app'>
 			<Header title={title} setTitle={setTitle} />
 			<ToDoForm addTask={addTask} />
 			<ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter} resetList={resetList} />
+			<ToDoShare setTitle={setTitle} setToDoList={setToDoList} />
 		</div>
 	);
 }
