@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { generateUUID } from './Helpers.js'
 
 //components
 import Header from "./Header";
@@ -13,8 +14,13 @@ function App() {
 		const dataInStorage = JSON.parse(sessionStorage.getItem('toDoListData'));
 		return dataInStorage != null ? dataInStorage : [];
 	}
-
 	const [toDoList, setToDoList] = useState(toDoListData);
+
+	var toDoListTitle = () => {
+		const titleInStorage = sessionStorage.getItem('toDoListTitle');
+		return titleInStorage != null ? titleInStorage : defaultListTitle;
+	}
+	const [title, setTitle] = useState(toDoListTitle);
 
 	const handleToggle = (id) => {
 		let mapped = toDoList.map(task => {
@@ -44,13 +50,6 @@ function App() {
 		}
 	};
 
-	var toDoListTitle = () => {
-		const titleInStorage = sessionStorage.getItem('toDoListTitle');
-		return titleInStorage != null ? titleInStorage : defaultListTitle;
-	}
-
-	const [title, setTitle] = useState(toDoListTitle);
-
 	const resetList = () => {
 		setToDoList([]);
 		sessionStorage.setItem('toDoListData', JSON.stringify([]));
@@ -65,22 +64,6 @@ function App() {
 			<ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter} resetList={resetList} />
 		</div>
 	);
-
-	function generateUUID() {
-		var d = new Date().getTime();
-		var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0;
-		return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-			var r = Math.random() * 16;
-			if (d > 0) {
-				r = (d + r) % 16 | 0;
-				d = Math.floor(d / 16);
-			} else {
-				r = (d2 + r) % 16 | 0;
-				d2 = Math.floor(d2 / 16);
-			}
-			return (c === 'x' ? r : ((r & 0x3) | (0x8))).toString(16);
-		});
-	}
 }
 
 export default App;
