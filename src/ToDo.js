@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ToDo = ({todo, handleToggle}) => {
+
     const handleClick = (e) => {
         e.preventDefault()
         handleToggle(e.currentTarget.id)

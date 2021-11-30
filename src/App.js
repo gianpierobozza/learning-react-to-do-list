@@ -3,10 +3,11 @@ import React, { useState } from "react";
 //components
 import Header from "./Header";
 import ToDoList from './ToDoList.js';
-import ToDoForm from './ToDoForm';
+import ToDoForm from './ToDoForm.js';
+
+const defaultListTitle = 'React.JS ToDoList';
 
 function App() {
-	const defaultListTitle = 'React.JS ToDoList';
 	
 	var toDoListData = () => {
 		const dataInStorage = JSON.parse(sessionStorage.getItem('toDoListData'));
