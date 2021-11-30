@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { generateUUID } from './Helpers.js'
+import { defaultListTitle } from './Globals.js'
 
 //components
 import Header from "./Header";
 import ToDoList from './ToDoList.js';
 import ToDoForm from './ToDoForm.js';
-
-const defaultListTitle = 'React.JS ToDoList';
 
 function App() {
 	

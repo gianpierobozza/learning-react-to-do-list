@@ -1,0 +1,1 @@
+export const defaultListTitle = 'React.JS ToDoList';

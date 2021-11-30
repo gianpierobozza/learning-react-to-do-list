@@ -1,6 +1,5 @@
 import React from 'react'
-
-const defaultListTitle = 'React.JS ToDoList';
+import { defaultListTitle } from './Globals.js'
 
 const Header = ({title, setTitle}) => {
 
