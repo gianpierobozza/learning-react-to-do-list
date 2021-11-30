@@ -10,10 +10,10 @@ const ToDo = ({todo, handleToggle}) => {
     return (
         <div
             id={todo.id}
-            name="todo"
+            name='todo'
             value={todo.id}
             onClick={handleClick}
-            className={todo.complete ? "todo strike" : "todo"}
+            className={todo.complete ? 'todo strike' : 'todo'}
         >
             {todo.task}
         </div>

@@ -10,6 +10,7 @@ The production app is deployed on AWS AmplifyApp at [https://master.dmkiin9kvsmy
 - Clear completed tasks
 - Change list title
 - Completely reset page
+- Share and Import - convert a list to a base64 string and copy it in another device
 
 ## Available Scripts
 
