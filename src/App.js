@@ -5,9 +5,9 @@ import Header from "./Header";
 import ToDoList from './ToDoList.js';
 import ToDoForm from './ToDoForm';
 
-const defaultListTitle = 'React.JS ToDoList';
-
 function App() {
+	const defaultListTitle = 'React.JS ToDoList';
+	
 	var toDoListData = () => {
 		const dataInStorage = JSON.parse(sessionStorage.getItem('toDoListData'));
 		return dataInStorage != null ? dataInStorage : [];
@@ -53,7 +53,7 @@ function App() {
 	const resetList = () => {
 		setToDoList([]);
 		sessionStorage.setItem('toDoListData', JSON.stringify([]));
-		//setTitle(defaultListTitle); TODO: set title not working
+		setTitle(defaultListTitle);
 		sessionStorage.setItem('toDoListTitle', defaultListTitle);
 	};
 

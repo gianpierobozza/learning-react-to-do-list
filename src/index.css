@@ -51,7 +51,7 @@ input:hover.list-title {
   display: inline-block;
 }
 
-.tooltip .tooltiptext {
+.tooltip .tooltip-text {
   visibility: hidden;
   width: 120px;
   background-color: #555;
@@ -68,7 +68,7 @@ input:hover.list-title {
   transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .tooltip-text::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -79,7 +79,7 @@ input:hover.list-title {
   border-color: #555 transparent transparent transparent;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }

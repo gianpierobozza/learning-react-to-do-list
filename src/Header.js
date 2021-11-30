@@ -7,7 +7,7 @@ const Header = ({title, setTitle}) => {
 
 	const onKeyDown = (event) => {
 		if (event.key === "Enter" || event.key === "Escape") {
-		  event.target.blur();
+		  	event.target.blur();
 		}
 	}
 
@@ -31,7 +31,7 @@ const Header = ({title, setTitle}) => {
 				onKeyDown={onKeyDown}
 				onBlur={onBlur}
 			/>
-			<span className="tooltiptext">Click to Edit!</span>
+			<span className="tooltip-text">Click to Edit!</span>
 		</div>
 	);
 };
