@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The production app is deployed on AWS AmplifyApp at [https://master.dmkiin9kvsmy9.amplifyapp.com/](https://master.dmkiin9kvsmy9.amplifyapp.com/)
+The production app is deployed on AWS Amplify App at [https://master.dmkiin9kvsmy9.amplifyapp.com/](https://master.dmkiin9kvsmy9.amplifyapp.com/)
 
 ## Current Features:
 - Add tasks
